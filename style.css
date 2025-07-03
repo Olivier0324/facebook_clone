@@ -48,6 +48,12 @@ ul{
   left: -0.7rem;
   top: 0;
 }
+.flex-row{
+  display: flex;
+  align-items: start;
+
+}
+
 /* END OF UTILITY CLASSES */
 .navbar{
   display: flex;
@@ -55,6 +61,9 @@ ul{
   justify-content: space-between;
   padding: 1rem 3%;
   background-color: var(--color-brand-primary);
+  position: sticky;
+  top:0 ;
+  z-index:1000 ;
 }
 .navbar .navbar__logo{
   width: 15rem;
@@ -118,4 +127,44 @@ border-radius: 2rem;
 .navbar__right .search__box input:focus{
   outline: none;
   border: none;
+}
+/* ---- NAVIGATION END ----*/
+.container{
+  padding:2rem 2% 0rem 2%;
+}
+.container.flex-row{
+  justify-content: space-between;
+  gap: 2rem;
+}
+ .sidebar__left,
+ .sidebar__right{
+  flex-basis: 30rem;
+  position: sticky;
+  top: 84px;
+}
+.sidebar__left .sidebar__list{
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
+.sidebar__left .sidebar__list .sidebar__list-item a{
+width: 100%;
+display: flex;
+color: var(--color-background-dark);
+padding: 1rem;
+align-items: center;
+border-radius: 0.3rem;
+font-size: 1.2rem;
+transition: .4s linear;
+}
+.sidebar__left .sidebar__list .sidebar__list-item a:hover{
+  background-color: var(--color-text-on-dark);
+}
+.sidebar__left .sidebar__list .sidebar__list-item .sidebar__icon{
+width: 2.5rem;
+margin-right: 2rem;
+}
+.main-content{
+  background-color: red;
+  flex:1;
 }
