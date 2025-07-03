@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 :root {
   --color-overlay-light: #ffffff1a;
   --color-background-dark: #252728;
@@ -5,6 +6,7 @@
   --color-text-muted: #67788a;
   --color-brand-primary: #0866ff;
   --bg-color-primary:#d6d1d1;
+  --color-red:red;
 }
 
 * {
@@ -12,6 +14,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: tahoma;
+  font-family: "Poppins", sans-serif;
 }
 html {
   font-size: 62.5%;
@@ -21,7 +24,98 @@ body {
 }
 a{
     text-decoration: none;
+    
+}
+img{
+  cursor: pointer;
+}
+ul{
+  list-style: none;
 }
 /* UTILITY CLASSES */
+.online{
+  position: relative;
+}
+.online::after{
+  position: absolute;
+  content: '';
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: green;
+  border-radius: 50%;
+  border: 2px solid var(--color-text-on-dark);
+  z-index: 2;
+  left: -0.7rem;
+  top: 0;
+}
 /* END OF UTILITY CLASSES */
-
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3%;
+  background-color: var(--color-brand-primary);
+}
+.navbar .navbar__logo{
+  width: 15rem;
+}
+.navbar__left{
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.navbar__list{
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.navbar__list .navbar__icon{
+  width: 2.5rem;
+}
+.navbar__list .navbar__list-item{
+position: relative;
+cursor: pointer;
+} 
+.navbar__list .navbar__list-item span{
+background-color: var(--color-red);
+color: var(--color-text-on-dark);
+height: 2rem;
+width: 2rem;
+position: absolute;
+border: none;
+border-radius: 50%;
+z-index: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+top: -1.2rem;
+right: -1rem;
+} 
+.navbar__right{
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.navbar__right .profile__icon img{
+  width: 4rem;
+  border-radius: 50%;
+}
+.navbar__right .search__box{
+display: flex;
+align-items: center;
+background-color: var(--color-text-on-dark);
+padding:0 2rem;
+border-radius: 2rem;
+}
+.navbar__right .search__box img{
+  width: 1.5rem;
+}
+.navbar__right .search__box input{
+  padding: .7rem 1rem;
+  border: none;
+  background-color: transparent;
+}
+.navbar__right .search__box input:focus{
+  outline: none;
+  border: none;
+}
