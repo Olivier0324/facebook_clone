@@ -1,0 +1,27 @@
+:root {
+  --color-overlay-light: #ffffff1a;
+  --color-background-dark: #252728;
+  --color-text-on-dark: #ffffff;
+  --color-text-muted: #67788a;
+  --color-brand-primary: #0866ff;
+  --bg-color-primary:#d6d1d1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: tahoma;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--bg-color-primary);
+}
+a{
+    text-decoration: none;
+}
+/* UTILITY CLASSES */
+/* END OF UTILITY CLASSES */
+
