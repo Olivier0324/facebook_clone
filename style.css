@@ -7,6 +7,7 @@
   --color-brand-primary: #0866ff;
   --bg-color-primary:#d6d1d1;
   --color-red:red;
+  --text-blue-light:#cedede;
 }
 
 * {
@@ -104,6 +105,7 @@ right: -1rem;
   display: flex;
   align-items: center;
   gap: 2.5rem;
+ 
 }
 .navbar__right .profile__icon img{
   width: 4rem;
@@ -130,28 +132,25 @@ border-radius: 2rem;
 }
 /* ---- NAVIGATION END ----*/
 .container{
-  padding:2rem 2% 0rem 2%;
-}
-.container.flex-row{
+  padding:2rem 3% 0rem 3%;
+  display: flex;
   justify-content: space-between;
-  gap: 2rem;
 }
-
  .sidebar__left{
-  flex-basis: 20%;
+  flex-basis: 25%;
   position: sticky;
   top: 84px;
-
+  height: calc(100vh - 84px);
 }
  .sidebar__right{
-  flex-basis: 20%;
+  flex-basis: 25%;
   position: sticky;
   top: 84px;
 }
 .sidebar__left hr{
   margin:0 0 2rem 0;
   border: 0;
-  width: 100%;
+  width: 50%;
   height: 0.124rem;
   background-color: rgba(0, 0,0, 0.2);
 }
@@ -206,10 +205,12 @@ margin-right: 2rem;
   font-size: 1.2rem;
 }
 /* ------ END OF LEFT SIDEBAR ------- */
-.main-content{
-  padding: 0 3rem;
-  flex-basis: 60%;
-  
+
+ .main-content{
+  padding: 1rem 3rem 0 3rem;  
+  flex-basis:50% ;
+  overflow: hidden;
+
   
 }
 .status__wrapper{
@@ -219,6 +220,7 @@ margin-right: 2rem;
 .status__wrapper .status-row{
   display: flex;
   gap: 2rem;
+  overflow: hidden;
 }
 .status__wrapper .status-row .status{
 flex-basis: 200px;
@@ -245,6 +247,10 @@ cursor: pointer;
   z-index: 4;
   bottom: 20px;
   font-weight: 400;
+  width: 80%;
+  font-size: 1.1rem;
+  text-align: center;
+  text-wrap: wrap;
   
 }
 
@@ -252,6 +258,13 @@ cursor: pointer;
   object-fit: cover;
   height: 100%;
   width: 100%;
+  transition: .3s linear;
+}
+.status__wrapper .status-row .status:hover .status__img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.2);
 }
 .status__wrapper .status-row .status .status__icon{
 position: absolute;
@@ -267,4 +280,115 @@ left: 50%;
 transform: translate(-50%,-10%);
 border-color: var(--color-text-on-dark);
 top: 50%;
+}
+/* Status end */
+.post__content{
+  background-color: var(--color-text-on-dark);
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.post__content .post__box{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.post__content .post__form{
+  background-color: var(--text-blue-light);
+  width: 100%;
+  border-radius: .5rem;
+}
+.post__content .post__form input{
+ border: none;
+  width: 100%;
+  background-color: transparent;
+  padding: 1.5rem 2.5rem;
+}
+.post__content .post__form input:focus{
+ border: none;
+outline: none;
+}
+.post__content .profile__icon{
+  width: 6rem;
+  border-radius: 50%;
+}
+.post__content .post__action{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.post__content .post__action .action{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.post__content .post__action .action img{
+ width: 3rem;
+ margin-right: .9rem;
+}
+.post__content .post__action .action span{
+ font-size: 1.3rem;
+}
+/* POST CONTENT END */
+.post__list{
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.post__card{
+background-color: var(--color-text-on-dark);
+padding: 2rem;
+border-radius: 1rem;
+}
+.post__card__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
+.post__card__header .post__card__info h3{
+ font-size: 1.6rem;
+ margin-bottom: .3rem;
+}
+.post__card__header .post__card__info p{
+opacity: .6;
+font-weight: 500;
+font-size: 1.1em;
+
+}
+.post__card__header .post__card__info img{
+width: 5rem;
+border-radius: 50%;
+}
+.post__card__header  .more-icon{
+width: 2.5rem;
+display: block;
+cursor: pointer;
+
+}
+.post__card__header .post__card__info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.post__card__body{
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  width: 100%;
+  display: block;
+  line-height: 1.5;
+}
+.post__card__body a{
+  color: var(--color-brand-primary);
+}
+.post__card__body a:hover{
+  text-decoration: underline;
+}
+.post__card__img{
+  display: block;
+  width: 100%;
 }
